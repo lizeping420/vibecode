@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分形图形生成器</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>分形图形生成器</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label for="fractal-type">分形类型：</label>
+                <select id="fractal-type">
+                    <option value="koch">科赫曲线</option>
+                    <option value="sierpinski">谢尔宾斯基三角形</option>
+                    <option value="mandelbrot">曼德博集合</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="iterations">迭代深度：</label>
+                <input type="range" id="iterations" min="1" max="8" value="5">
+                <span id="iterations-value">5</span>
+            </div>
+            <div class="control-group">
+                <label for="color-scheme">颜色方案：</label>
+                <select id="color-scheme">
+                    <option value="rainbow">彩虹</option>
+                    <option value="grayscale">灰度</option>
+                    <option value="blue">蓝色系</option>
+                    <option value="green">绿色系</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="zoom">缩放级别：</label>
+                <input type="range" id="zoom" min="1" max="10" value="1">
+                <span id="zoom-value">1</span>
+            </div>
+            <button id="reset">重置视图</button>
+        </div>
+        <div id="canvas-container"></div>
+        <div class="info">
+            <h2>关于分形</h2>
+            <p>分形是一种具有自相似性的几何图形，在不同尺度下展现出相似的结构。本项目实现了三种经典分形算法：</p>
+            <ul>
+                <li><strong>科赫曲线</strong>：通过不断将线段替换为特定的折线模式生成</li>
+                <li><strong>谢尔宾斯基三角形</strong>：通过递归移除三角形中心部分生成</li>
+                <li><strong>曼德博集合</strong>：通过复数迭代计算生成的复杂分形图案</li>
+            </ul>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+</body>
+</html>
